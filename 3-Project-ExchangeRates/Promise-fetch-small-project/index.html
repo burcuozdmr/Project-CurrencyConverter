@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CURRENCY</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,1,200" />
+  <style>
+    *{
+      font-family: 'Poppins', sans-serif;
+    }
+    .small-flag{
+      width: 7px;
+      height: auto;
+    }
+    .dropdown-toggle::after {
+    margin-left:30px; 
+    }
+    .custom-hover:hover {
+    color: #0d6efd;
+    }
+    .cursor{
+    cursor: pointer;
+    }
+    .custom-scroll {
+    max-height: 150px; 
+    overflow-y: auto;
+  }
+  </style>
+</head>
+<body>
+  <div class="container ">
+    <div class="d-flex justify-content-center align-items-center flex-column" style="height: 100vh;">
+      <h4 class="mb-4">Currency Converter</h4>
+      <div class="card mb-3 text-center shadow-lg border-0 p-5" style="width: 30rem;">
+        <div class="card-header bg-primary border-primary"></div>
+        <div class="card-body bg-secondary p-4">
+          <h6 class="card-title mb-2 mt-5">Exhange Rate</h6>
+          <div class="d-flex flex-row justify-content-center align-items-center">
+            <h2 class="card-text text-dark mb-5" id="symbol">$</h2>
+            <h2 class="card-text text-dark mb-5" id="result"></h2>
+          </div>
+            <div class="input-group mb-4">
+              <span class="input-group-text p-2 text-primary" id="fromCurrencySymbol">$</span>
+              <input type="text" class="form-control P-2" id="amount" placeholder="Amount">
+              <span class="input-group-text p-2 text-primary ">.00</span>
+            </div>
+          <div class="d-flex gap-3 mb-4">
+            <div class="dropdown w-100">
+              <button class="btn btn-dark dropdown-toggle w-100 text-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+              id="dropdownButtonFrom">
+                From
+              </button>
+              <ul class="dropdown-menu custom-scroll cursor" id="menuFrom" aria-labelledby="dropdownButtonFrom">
+                
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/AE/flat/24.png" class="me-2">AED
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/AF/flat/24.png" class="me-2">AFN
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/AR/flat/24.png" class="me-2">ARS
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/AZ/flat/24.png" class="me-2">AZN
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/AU/flat/24.png" class="me-2">AUD
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/BA/flat/24.png" class="me-2">BAM
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/BG/flat/24.png" class="me-2">BGN
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/BR/flat/24.png" class="me-2">BRL
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/CA/flat/24.png" class="me-2">CAD
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/CH/flat/24.png" class="me-2">CHF
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/CU/flat/24.png" class="me-2">CUP
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/CN/flat/24.png" class="me-2">CNY
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/CZ/flat/24.png" class="me-2">CZK
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/DK/flat/24.png" class="me-2">DKK
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/EG/flat/24.png" class="me-2">EGP
+                </li>
+                <li class="dropdown-item">
+                  EUR
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/GB/flat/24.png" class="me-2">GBP
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/KZ/flat/24.png" class="me-2">KZT
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/US/flat/24.png" class="me-2">USD
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/NO/flat/24.png" class="me-2">NOK
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/PL/flat/24.png" class="me-2">PLN
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/QA/flat/24.png" class="me-2">QAR
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/RO/flat/24.png" class="me-2">RON
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/TR/flat/24.png" class="me-2">TRY
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/JP/flat/24.png" class="me-2">JPY
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/IN/flat/24.png" class="me-2">INR
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/SA/flat/24.png" class="me-2">SAR
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/KR/flat/24.png" class="me-2">KRW
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/RU/flat/24.png" class="me-2">RUB
+                </li>
+              </ul>
+            </div>
+            
+            <span class="material-symbols-outlined align-self-center custom-hover cursor" id="syncButton">
+                sync_alt
+             </span>
+           
+             <div class="dropdown w-100">
+              <button class="btn btn-dark dropdown-toggle w-100 text-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownButtonTo">
+                To
+              </button>
+              <ul class="dropdown-menu custom-scroll cursor" id="menuTo" aria-labelledby="dropdownButtonTo">
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/AE/flat/24.png" class="me-2">AED
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/AF/flat/24.png" class="me-2">AFN
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/AR/flat/24.png" class="me-2">INR
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/AZ/flat/24.png" class="me-2">AZN
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/AU/flat/24.png" class="me-2">AUD
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/BA/flat/24.png" class="me-2">BAM
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/BG/flat/24.png" class="me-2">BE
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/BR/flat/24.png" class="me-2">BRL
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/CA/flat/24.png" class="me-2">CAD
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/CH/flat/24.png" class="me-2">CHF
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/CU/flat/24.png" class="me-2">CUP
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/CN/flat/24.png" class="me-2">CNY
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/CZ/flat/24.png" class="me-2">CZK
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/DK/flat/24.png" class="me-2">DKK
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/EG/flat/24.png" class="me-2">EGP
+                </li>
+                <li class="dropdown-item">
+                  EUR
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/GB/flat/24.png" class="me-2">GBP
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/KZ/flat/24.png" class="me-2">KZT
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/US/flat/24.png" class="me-2">USD
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/NO/flat/24.png" class="me-2">NOK
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/PL/flat/24.png" class="me-2">PLN
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/QA/flat/24.png" class="me-2">QAR
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/RO/flat/24.png" class="me-2">RON
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/TR/flat/24.png" class="me-2">TRY
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/JP/flat/24.png" class="me-2">JPY
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/IN/flat/24.png" class="me-2">INR
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/SA/flat/24.png" class="me-2">SAR
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/KR/flat/24.png" class="me-2">KRW
+                </li>
+                <li class="dropdown-item">
+                  <img src="https://flagsapi.com/RU/flat/24.png" class="me-2">RUB
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+        </div>
+        <div class="card-footer bg-secondary p-4">
+          <button type="button" class="btn btn-primary w-100 mb-5" id="convertButton">Convert</button>
+      </div>
+  </div>
+  </div>
+ 
+
+
+
+
+
+
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+  <script src="currency.js"></script>
+  <script src="ui.js"></script>
+  <script src="project.js"></script>
+  
+</body>
+</html>
